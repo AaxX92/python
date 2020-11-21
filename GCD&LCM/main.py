@@ -1,6 +1,6 @@
 import tkinter as tk
 import tkinter.ttk as ttk
-import GCD_LCM
+import GCD_LCM  #导入自定义函数的文件
 
 #创建窗口
 window = tk.Tk()
@@ -42,7 +42,7 @@ f1_inpbox1.config(validate="key", validatecommand=(reg,"%P"))
 f1_inpbox2.config(validate="key", validatecommand=(reg,"%P"))
 f1_inpbox3.config(validate="key", validatecommand=(reg,"%P"))
 
-#调用自定义函数
+#调用另外一个文件中的自定义函数
 def start_count1():
     num1 = GCD_LCM.my_prime_factorization(int(f1_inpbox1.get()))
     num2 = GCD_LCM.my_prime_factorization(int(f1_inpbox2.get()))
