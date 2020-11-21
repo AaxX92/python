@@ -2,6 +2,7 @@ import tkinter as tk
 import tkinter.ttk as ttk
 import GCD_LCM
 
+#创建窗口
 window = tk.Tk()
 window.title("my window")
 window.geometry("350x200")
@@ -21,13 +22,14 @@ reg = window.register(correct)
 
 
 
-
+#创建两个tab标签，用于切换两种计算页面
 tab = ttk.Notebook(window)
 
-
+#tab里需要一个child，也就是frame作为容器
 frame1 = tk.Frame(tab)
 tab1 = tab.add(frame1, text = "最大公因数")
 
+#创建3个输入框
 f1_inpbox1 = tk.Entry(frame1)
 f1_inpbox1.pack()
 f1_inpbox2 = tk.Entry(frame1)
@@ -35,10 +37,12 @@ f1_inpbox2.pack()
 f1_inpbox3 = tk.Entry(frame1)
 f1_inpbox3.pack()
 
+#检查3个输入框输入的内容是否为数字
 f1_inpbox1.config(validate="key", validatecommand=(reg,"%P"))
 f1_inpbox2.config(validate="key", validatecommand=(reg,"%P"))
 f1_inpbox3.config(validate="key", validatecommand=(reg,"%P"))
 
+#调用自定义函数
 def start_count1():
     num1 = GCD_LCM.my_prime_factorization(int(f1_inpbox1.get()))
     num2 = GCD_LCM.my_prime_factorization(int(f1_inpbox2.get()))
